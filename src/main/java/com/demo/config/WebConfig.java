@@ -19,11 +19,12 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-@Configuration
-@EnableWebMvc
-@ComponentScan(basePackages="com.demo.controller")
+//@Configuration
+//@EnableWebMvc
+//@ComponentScan(basePackages="com.demo.controller")
 public class WebConfig extends WebMvcConfigurerAdapter {
-	
+
+	/*
 	@Bean
 	public InternalResourceViewResolver getInternalResourceViewResolver(){
 		InternalResourceViewResolver resolver =new InternalResourceViewResolver();
@@ -31,11 +32,14 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		resolver.setSuffix(".jsp");
 		return resolver;
 	}
-	
+	*/
+
+	/*
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 		registry.viewResolver(getInternalResourceViewResolver());
 	}
+	*/
 
 	/**
 	 * We need to define 3 things to implement  

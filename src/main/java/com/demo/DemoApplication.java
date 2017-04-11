@@ -1,23 +1,27 @@
 package com.demo;
 
-import java.util.concurrent.Executor;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.AsyncConfigurerSupport;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.scheduling.annotation.EnableAsync;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableAsync
-public class DemoApplication extends AsyncConfigurerSupport {
+public class DemoApplication extends SpringBootServletInitializer  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(DemoApplication.class);
+	}
+
+	/*
 	@Override
 	public Executor getAsyncExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
@@ -28,4 +32,5 @@ public class DemoApplication extends AsyncConfigurerSupport {
 		executor.initialize();
 		return executor;
 	}
+	*/
 }
