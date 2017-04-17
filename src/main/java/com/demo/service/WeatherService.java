@@ -18,12 +18,12 @@ import com.demo.entity.Weather;
 public class WeatherService {
 
 	// http://api.openweathermap.org/data/2.5/weather?q=Dallas,us&appid=
-	// 
+	// 9bd9d333cf662906ff4380fd4954de3e
 	private static final Logger logger = LoggerFactory
 			.getLogger(WeatherService.class);
 
 	private final RestTemplate restTemplate;
-	private final static String APP_ID = "xxxx";
+	private final static String APP_ID = "9bd9d333cf662906ff4380fd4954de3e";
 
 	public WeatherService(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = new RestTemplate();

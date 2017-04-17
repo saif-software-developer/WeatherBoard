@@ -1,6 +1,5 @@
 package com.demo.controller;
 
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -20,13 +19,6 @@ public class RootController {
 
 	@Autowired
 	WeatherService weatherService;
-
-	@RequestMapping("/")
-	String home(Map<String, Object> model) {
-		logger.info("$$$$$$$$$$$$$  home page is here bro $$$$$$$$$$$$$ ");
-		model.put("message", "$$$$$$$$$$$$$  home page is here bro $$$$$$$$$$$$$ ");
-		return "index";
-	}
 
 	@RequestMapping(value = "/cityCountry/{cityCountry}", method = RequestMethod.GET)
 	String cityCountry(@PathVariable("cityCountry") String cityCountry) {
