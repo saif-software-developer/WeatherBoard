@@ -1,4 +1,4 @@
-package com.demo.controller;
+package com.weather.controller;
 
 import java.util.Date;
 import java.util.Map;

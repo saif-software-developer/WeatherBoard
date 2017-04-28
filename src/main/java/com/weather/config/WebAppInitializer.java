@@ -1,4 +1,4 @@
-package com.demo.config;
+package com.weather.config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

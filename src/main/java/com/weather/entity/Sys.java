@@ -1,4 +1,4 @@
-package com.demo.entity;
+package com.weather.entity;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.demo.service;
+package com.weather.service;
 
 import java.util.concurrent.Future;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import com.demo.entity.Weather;
+import com.weather.entity.Weather;
 
 @Service
 public class WeatherService {
