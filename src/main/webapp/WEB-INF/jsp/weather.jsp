@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/neo.css">
+	<link rel="stylesheet" type="text/css" href="css/neo.css">
 	<script src="https://fb.me/react-15.0.2.js"></script>
 	<script src="https://fb.me/react-dom-15.0.2.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -16,6 +16,7 @@
 		<div id="main" class="container">
 			
 		</div>
-		<script type="text/babel" src="resources/js/WeatherManager.js"></script> 
+		<script type="text/babel" src="js/Wind.jsx"></script> 
+		<script type="text/babel" src="js/WeatherManager.jsx"></script> 
 	</body>
 </html>
