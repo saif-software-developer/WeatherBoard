@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.demo.entity.Weather;
 import com.demo.service.WeatherService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 public class RootController {
@@ -73,6 +74,22 @@ public class RootController {
 				+ fairfield.get().getClouds();
 
 		return weather;
+	}
+	
+	@RequestMapping(value = "/async/weatherInCity", method = RequestMethod.GET)
+	Weather weatherInCity() throws InterruptedException, ExecutionException {
+		
+		Future<Weather> dallas = weatherService
+				.fetchWeatherForCity("Dallas,us");
+
+		// Wait until they are all done
+		while (!dallas.isDone() ) {
+			Thread.sleep(10); // 10-millisecond pause between each check
+		}
+
+		ObjectMapper mapper = new ObjectMapper();
+		
+		return dallas.get();
 	}
 
 }
