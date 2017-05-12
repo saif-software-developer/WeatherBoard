@@ -13,10 +13,10 @@ import com.weather.entity.Weather;
 import com.weather.service.WeatherService;
 
 @RestController
-public class RootController {
+public class WeatherBoardController {
 
 	private static final Logger logger = LoggerFactory
-			.getLogger(RootController.class);
+			.getLogger(WeatherBoardController.class);
 
 	@Autowired
 	WeatherService weatherService;
@@ -86,8 +86,6 @@ public class RootController {
 		while (!dallas.isDone() ) {
 			Thread.sleep(10); // 10-millisecond pause between each check
 		}
-
-		ObjectMapper mapper = new ObjectMapper();
 		
 		return dallas.get();
 	}

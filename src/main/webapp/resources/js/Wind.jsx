@@ -1,4 +1,4 @@
-var Wind=React.createClass({
+var Wind= React.createClass({
 	render: function() {
 		var wind=this.props.wind;
 		if(wind){
@@ -17,4 +17,4 @@ var Wind=React.createClass({
 		}
 		
 	}
-}); 
+});

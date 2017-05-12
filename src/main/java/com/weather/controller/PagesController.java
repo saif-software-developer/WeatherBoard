@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PagesController {
 
 	private static final Logger logger = LoggerFactory
-			.getLogger(RootController.class);
+			.getLogger(WeatherBoardController.class);
 	
 	@RequestMapping(path="/",method = RequestMethod.GET)
 	String home() {

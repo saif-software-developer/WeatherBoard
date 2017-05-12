@@ -12,10 +12,10 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableAsync
-public class DemoApplication extends AsyncConfigurerSupport {
+public class WeatherApplication extends AsyncConfigurerSupport {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(WeatherApplication.class, args);
 	}
 
 	@Override
