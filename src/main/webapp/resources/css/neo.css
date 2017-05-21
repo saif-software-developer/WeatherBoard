@@ -1,35 +1,41 @@
 @CHARSET "UTF-8";
 
-#header {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:5px;
-}
-#nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:100px;
-    float:left;
-    padding:5px;	      
-}
-#section {
-    width:350px;
-    float:left;
-    padding:10px;	 	 
-}
-#footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-   padding:5px;	 	 
+body {
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  color: #FFF;
+  font-smooth:always;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0 0 1px rgba(0,0,0,0.3);
+  font-weight: lighter;
+  background-image: url("http://wallpoper.com/images/00/44/66/90/aero-green-and-dark-blue_00446690.jpg");
 }
 
+#area {
+  width: 400px;
+  height: 700px;
+  position: absolute;
+  left: 50%;
+  top: 30%; 
+  margin-left: -200px;
+  margin-top: -150px;
+  position: absolute;
+}
 
-#header img, 
-#header h1 {
-    display: inline-block;
-    vertical-align: middle;
+.shape {
+    background-color:rgba(0,0,0,0.5);
+                margin: 10px;
+     -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+}
+
+#place {
+  font-size: 22px;
+  text-align: center;
+}
+
+.humidity-font{
+	color: #878787;
+	padding: 20px;
 }

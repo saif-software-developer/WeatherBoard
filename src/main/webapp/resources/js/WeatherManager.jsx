@@ -7,7 +7,9 @@ var WeatherManager= React.createClass({
 		
 	getInitialState: function() {
 			
-			var weather={};
+			var weather={
+				dt:null
+			};
 
 			return {
 				weather
@@ -20,39 +22,28 @@ var WeatherManager= React.createClass({
 		           .then(weather=>this.setState({weather}));
 		},
 		render: function() {
-			return(<div id="section">
-				<span> City : {this.state.weather.name} </span> 
+			return(
+			<div className="shape">
 				<br/>
-				<span> Date :  {this.state.weather.dt}  </span> 
+					<div id="place">{this.state.weather.name} </div>
+					<Sys sys={this.state.weather.sys}/> 
+					<span> Date : {new Date(this.state.weather.dt).toLocaleTimeString()}  </span> 
 				<br/>
-				<span> Cod  : {this.state.weather.cod}  </span>
 				<br/>
-				<span> Visibility : {this.state.weather.visibility}  </span> 
+					<span> Cod  : {this.state.weather.cod}  </span>
 				<br/>
-				<span> Base : {this.state.weather.base}  </span> 
+					<span> Visibility : {this.state.weather.visibility}  </span> 
 				<br/>
-				<span> Id : {this.state.weather.id}   </span> 
-				<br/>
-				
-				<span> Sys : </span> 
-					<Sys sys={this.state.weather.sys}/>
-				<br/>
-				
-				<span> Wind : </span> 
-					<Wind wind={this.state.weather.wind}/>
-				<br/>
-		
-				<span> Coord : </span> 
 					<Coord coord={this.state.weather.coord}/>
 				<br/>
-					<span> Main : </span> 
 					<Main main={this.state.weather.main}/>
 				<br/>
-					<span> Weather : </span> 
+					<Wind wind={this.state.weather.wind}/>
+				<br/>
 					<Weather weather={this.state.weather.weather}/>
-				
-			</div>);
-		}
+			</div>
+						
+			);}
 });
 
 var Coord= React.createClass({
@@ -79,17 +70,11 @@ var Sys= React.createClass({
 		var sys=this.props.sys;
 		if(sys){
 			return(<div>
-			type : {sys.type}
+			<div id="place">{sys.country}</div>
 			<br/>
-			id : {sys.id}
+			Sunrise : {new Date(sys.sunrise).toLocaleTimeString()}
 			<br/>
-			message: {sys.message}
-			<br/>
-			country : {sys.country}
-			<br/>
-			sunrise : {sys.sunrise}
-			<br/>
-			sunset : {sys.sunset}
+			Sunset : {new Date(sys.sunset).toLocaleTimeString()}
 			</div>);
 		}else{
 			return(<div>
@@ -104,16 +89,13 @@ var Main= React.createClass({
 	render: function() {
 		var main=this.props.main;
 		if(main){
-			return(<div>
+			return(<div className="humidity-font">
 			Temp : {main.temp}
 			<br/>
 			Pressure : {main.pressure}
 			<br/>
 			Humidity: {main.humidity}
 			<br/>
-			tempMain : {main.tempMin}
-			<br/>
-			tempMax : {main.tempMax}
 			</div>);
 		}else{
 			return(<div>
@@ -132,8 +114,6 @@ var Wind= React.createClass({
 				Wind Speed : {wind.speed}
 				<br/>
 				Wind deg   : {wind.deg}
-				<br/>
-				Wind gust  : {wind.gust}
 				<br/>
 			</div>);
 		}else{
@@ -155,13 +135,10 @@ var Weather= React.createClass({
 		}
 		if(weather){
 		   return( <div>
-				Id  : {weather[0].id}
-				<br/>
 				Main    : {weather[0].main}
 				<br/>
 				Description   : {weather[0].description}
 				<br/>
-				Icon   : 
 				<img src={imgSrc} />
 				
 			</div>);
@@ -176,5 +153,5 @@ var Weather= React.createClass({
 
 // Render 
 ReactDOM.render( <WeatherManager /> ,
-  document.getElementById('main')
+  document.getElementById('area')
 );

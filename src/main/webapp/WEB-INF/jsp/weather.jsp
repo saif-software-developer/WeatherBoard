@@ -11,11 +11,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 	<script src="http://requirejs.org/docs/release/2.2.0/minified/require.js"></script>
-	<script type="text/babel" src="js/Wind.jsx"></script> 
+	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.2/css/font-awesome.min.css" />
 	<title>Weather </title>
 </head>
 	<body>
-		<div id="main" class="container">
+		<div id="area">
 			
 		</div>
 		<script type="text/babel" src="js/WeatherManager.jsx"></script> 
